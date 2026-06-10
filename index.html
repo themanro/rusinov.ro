@@ -28,7 +28,14 @@
 
 <h1>Roman Rusinov</h1>
 <p>Designer, illustrator, maker — of brands, interfaces, films and music.</p>
-<p><a href="mailto:hello@rusinov.ro">hello@rusinov.ro</a></p>
+<p id="mail">hello [at] rusinov [dot] ro</p>
+<script>
+  /* assembled client-side so the address isn't scrapeable from the HTML */
+  var u = 'hello' + '@' + 'rusinov' + '.' + 'ro';
+  var a = document.createElement('a');
+  a.href = 'mailto:' + u; a.textContent = u;
+  document.getElementById('mail').replaceChildren(a);
+</script>
 
 <hr>
 

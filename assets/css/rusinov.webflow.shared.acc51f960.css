@@ -3484,3 +3484,6 @@ div.home-link{color:inherit;cursor:default}
 /* work index: entries as a grid */
 .work-index{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px 40px;margin-top:20px}
 .work-index .home-link{margin:0}
+
+/* align 01 header with section columns (w-col gutter) */
+.div-block-6{padding-left:10px}

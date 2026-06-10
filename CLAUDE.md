@@ -4,6 +4,7 @@ Single-page personal site for Roman Rusinov, hosted on GitHub Pages.
 
 ## Rules
 - Keep it ONE file: `index.html`. No build step, no frameworks, no JS, no external assets.
+  - One JS exception: the tiny inline script that assembles the mailto link client-side so the email isn't scrapeable from the HTML source. Keep it; don't add the plain address back anywhere in the markup.
 - Style stays minimal and 90s: system mono font, default-ish colors, dashed `<hr>` dividers, the small inline `<style>` block already in the file. Don't add CSS beyond what's there.
 - New content goes into the existing sections (Work, Clients, About, Elsewhere) or a new `<h2>` section in the same plain style.
 - Images: avoid unless explicitly asked; if added, put them in `img/` and keep them small.

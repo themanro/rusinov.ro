@@ -15,7 +15,7 @@
 
 ## hero
 
-Roman Rusinov is a designer, illustrator and maker — of brands, interfaces, films and music.
+Roman Rusinov is a designer/maker — of brands, interfaces, art and music.
 
 ## about
 

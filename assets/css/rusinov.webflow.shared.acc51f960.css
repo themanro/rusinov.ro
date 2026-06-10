@@ -3477,3 +3477,6 @@ a:focus {
 
 /* hide staging badge on self-hosted replica */
 .w-webflow-badge{display:none!important}
+
+/* de-linked list items should not look like links */
+div.home-link{color:inherit;cursor:default}

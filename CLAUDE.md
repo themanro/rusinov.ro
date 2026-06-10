@@ -11,6 +11,17 @@ Roman Rusinov's personal site: a self-hosted replica of his original Webflow sit
 - `assets/img/`, `assets/fonts/` — all media, fully local
 - Original full-res source images also live outside the repo in `~/rusinov-archive/work/`
 
+## Content editing — IMPORTANT
+Six homepage regions are markdown-driven: hero, about, overview, skills, writeups,
+away (marked `data-edit="<key>"` in index.html). Their content lives in
+`content/site.md`. **Edit those regions ONLY via content/site.md**, then run
+`python3 tools/build.py` (or just push — the GitHub Action rebuilds automatically).
+Direct HTML edits inside those regions get overwritten on the next build.
+Everything else (cards, nav, footer, work pages) is still edited directly in HTML.
+
+Deploys go through GitHub Actions (`.github/workflows/build-deploy.yml`):
+every push to main rebuilds from site.md and deploys via Pages artifact.
+
 ## Rules
 - This is generated Webflow markup — edit content (text, links, images) in place, but
   don't restructure the class soup or touch `data-w-id` attributes (they drive animations).

@@ -1,0 +1,46 @@
+name: Build & deploy site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Rebuild HTML from content/site.md
+        run: python3 tools/build.py
+
+      - name: Commit rebuilt HTML back to the repo
+        run: |
+          if ! git diff --quiet; then
+            git config user.name "site-builder[bot]"
+            git config user.email "actions@users.noreply.github.com"
+            git add -A
+            git commit -m "Rebuild site from content/site.md"
+            git push
+          fi
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

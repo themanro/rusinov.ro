@@ -33,7 +33,16 @@
   }
   a { color: var(--blue); text-underline-offset: 3px; }
   a:hover { background: var(--blue); color: #fff; text-decoration: none; }
-  h1 { font-size: 1em; font-weight: 700; margin: 0 0 2.5rem; letter-spacing: .04em; }
+  /* the name has been upside down since 2015 */
+  h1 {
+    font-size: 1em;
+    font-weight: 700;
+    margin: 0 0 2.5rem;
+    letter-spacing: .04em;
+    text-transform: lowercase;
+    transform: rotate(180deg);
+    display: inline-block;
+  }
   .now { margin: 2rem 0; }
   .now b { font-weight: 700; }
   .meta { color: var(--dim); }

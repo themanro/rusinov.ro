@@ -30,7 +30,7 @@ Designer, illustrator and maker in Brevard, NC. I take products from idea to lau
 
 ## now
 
-designing risk software at [Eolas](https://eolas.co) &nbsp;·&nbsp; making fishing gear at [ikari](https://ikari.wtf) &nbsp;·&nbsp; otherwise on a trail or in a river
+designing risk software at [Eolas](https://eolas.co) · making fishing gear at [ikari](https://ikari.wtf) · otherwise on a trail or in a river
 
 ## pile
 

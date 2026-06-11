@@ -6,7 +6,8 @@ https://rusinov.ro. One column, system mono, an undated pile of made things.
 ## How it works
 - **`content/site.md` is the entire site content** — sections `## hero`, `## now`,
   `## pile`. Pile entries: `### caption` + optional `image:` or `video:` (YouTube) line;
-  no media line = plain text entry.
+  no media line = plain text entry. Extra options per entry: `pinned: yes` (floats to
+  top, max 3) and `circa: YYYY` (renders a dim "(circa YYYY)" tag once 10+ years old).
 - `tools/build.py` renders site.md into `tools/template.html` → `index.html`.
   Stdlib only. Run `python3 tools/build.py` after editing, or just push —
   the GitHub Action (`.github/workflows/build-deploy.yml`) rebuilds and deploys
@@ -15,6 +16,11 @@ https://rusinov.ro. One column, system mono, an undated pile of made things.
 - Layout/CSS/meta/footer/contact links live in `tools/template.html`.
 - Email is obfuscated: `data-mail` anchor + footer script. Never put the plain
   address in markup or markdown.
+
+## Process
+- **Always verify in the local preview before pushing** (Roman's standing rule):
+  `python3 tools/build.py`, then check the `rusinov-site` preview server (port 8642) —
+  images load, layout sane — before commit/push.
 
 ## Content conventions
 - The pile is undated and order-curated, not chronological. New things usually

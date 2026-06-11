@@ -1,278 +1,139 @@
 <!--
-  This file is the content of rusinov.ro. Edit it, commit, and the site
-  rebuilds itself (GitHub Action runs tools/build.py and redeploys).
+  This file IS rusinov.ro. Edit it, commit, and the site rebuilds itself.
 
   Quick edit link: https://github.com/themanro/rusinov.ro/edit/main/content/site.md
 
   Formatting:
     [text](https://url)   link
     **bold**  _italic_    emphasis
-    blank line            paragraph break
-    plain line break      small break (same paragraph)
-  Section names (## hero, ## about, ...) must not change.
-  In ## writeups, each entry is:  ### LABEL | Name | optional tag (new/RETIRED)
+    blank line             paragraph break (in ## hero)
 
-  In ## examples (the thumbnail cards), each entry is:
-    ### Caption shown on hover     (use "### -" for no caption)
-    image: /uploads/my-image.jpg   (or video: https://youtu.be/XXXX)
-    page: /work/some-page          (optional "More about this project" link)
+  The pile (## pile): each entry starts with "### caption text", then optionally
+  ONE of these lines:
+    image: /uploads/my-image.jpg     a picture (caption goes under it)
+    video: https://youtu.be/XXXXX    an inline YouTube player
+  An entry with no image/video is just a line of text in the pile.
+  New entries go wherever you drop them - top, middle, bottom. No dates.
+
   New images: upload to the /uploads folder on GitHub (Add file > Upload files),
-  then reference them here. Keep images around 800-1200px wide.
+  keep them roughly 800-1600px wide, then reference as image: /uploads/<name>.
+
+  Section names (## hero, ## now, ## pile) must not change.
 -->
 
 ## hero
 
-Roman Rusinov is a designer/maker — of brands, interfaces, art and music.
+Designer, illustrator and maker in Brevard, NC. I take products from idea to launch — brands, interfaces, websites, the occasional physical object. For years I was the designer behind SightPlan (acquired by SmartRent in 2022). I draw, shoot photos and film, release music as F ∆ R L Ø W, and once designed and built the house I live in.
 
-## about
+## now
 
-Roman Rusinov is a designer, illustrator and maker based in Brevard, NC. Currently designing risk-management software at [Eolas](https://eolas.co).
+designing risk software at [Eolas](https://eolas.co) &nbsp;·&nbsp; making fishing gear at [ikari](https://ikari.wtf) &nbsp;·&nbsp; otherwise on a trail or in a river
 
-He takes products from idea to launch: brand identity, marketing, websites, interfaces, and the occasional physical object. For years he was the designer behind SightPlan, a property-operations SaaS — brand, marketing site, mobile apps, hundreds of icons — which was acquired by SmartRent in 2022 for $135M.
+## pile
 
-He also does commercial illustration, print, video & photo production. He writes and releases music as [F ∆ R L Ø W](https://farlowmusic.bandcamp.com/). He designed and built his own house.
+### “Tinny” was a boat of mine. It was glorious.
+image: /assets/img/5dd6c6e18bbffc785bc9bc17_boat-illustration.jpg
 
-## overview
+### [RUD](https://farlowmusic.bandcamp.com/album/rud) — an album. Written, recorded and released as F ∆ R L Ø W.
+image: /uploads/rud-cover.jpg
 
-**_rusinov.ro_** practice focuses on design systems that improve relationships between the user and product to each other’s advantages. Roman's love for technology and tools has driven him to build products, experiences and visuals that people are excited to use and see. While exercising a good eye for aesthetics, he grasps and distills complex issues and translate them into clean, focused and understandable solutions.
-
-## skills
-
-- MFA in graphic design and fine arts.
-- BA in Business administration, management and operations.
-- Stanford's d.School, d.Leadership design thinking course.
-- Design of premium digital product experiences in fast paced and dynamic organizations.
-- Creative direction.
-- Work with multiple startups.
-- Company and product branding, visual identity and marketing strategies.
-- Defining interfaces optimized for a cross device ecosystem with their unique screen resolutions, form factors and interaction paradigms. Understanding of OEM interface guidelines and app frameworks.
-- Data analysis and data-driven decision making.
-- Ability to communicate design concept ideas through sketches and wireframes.
-- Experience with handling and tracking iterative design prototypes for reviews and testing.
-- html, css, javascript, jquery.
-- Ability to create user interface prototypes and GUI.
-- Iconography.
-- Analog and digital photography and videography, camera operation, lightning setup, post-production and editing.
-- Experienced drone pilot and operator.
-- Knowledge of digital video technologies and advertising solutions.
-- Ability to produce high quality digital and analog illustrations.
-- Great knowledge of color usage, typography, brand guidelines and equity.
-- Experience with designing interactive voice respose systems.
-- Knowledge of agile methodology and product development.
-
-## examples
-
-### Illustration for msoverland.com
-
-image: /assets/img/5d51cd99356da6196ca664bb_ms-overland-thumb_402x.png
-
-### Illustration
-
-image: /assets/img/5e348aa634c4511fff20db3d_yeahbuoy-thumb.jpg
-page: /work/yeah-buoy
-
-### Coming through illustration.
-
-image: /assets/img/5ebd4c99a7ae3cdcef43d265_coming-through-thumbnail.jpg
-page: /work/coming-through
-
-### Commissioned illustration for Tasco MTB
-
-image: /assets/img/5d51bd0c7c7c291861f97e6d_tasco-mtb-bear-thumb_402x.png
-
-### Podcast cover design for The Third Wave
-
-image: /assets/img/5d51cf65f82313c2cb516651_ttw-podcast-cover-thumb_402x.png
-page: /work/the-third-wave-podcast
-
-### Illustration for US Forest Service
-
+### Smokey, animated. US Forest Service.
 image: /assets/img/5e3486cdd8d0c262a40c54fa_Smokey_Animation_web.gif
-page: /work/smokey
 
-### Logo and design for My University Advisor
+### Designed and built a house. Slept in it the same decade.
 
-image: /assets/img/5d51b3cb77dd50188e6c5c27_my-university-advisor-thumbnail_402x.png
-page: /work/test-2
-
-### Illustration for US Forest Service
-
-image: /assets/img/5e348c32d8d0c281800ca158_snowfalia-thumb.jpg
-page: /work/snowfalia
-
-### Brand study for Florida Hospital Innovation Lab
-
-image: /assets/img/5d51b3918483ed6fc0389479_fhil-thumbnail_402x.png
-page: /work/test-1
-
-### -
-
+### Hand-drawn trail map for Mulberry Gap. Ellijay, GA.
 image: /assets/img/5d51d0ec28fbf0478969efab_mulberry-gap-thumb_402x.png
 
-### Logo for brewery
+### Stoned ape. Illustration for The Third Wave.
+image: /assets/img/5dd6b9eded185396c69e930b_stoned-ape.png
 
-image: /assets/img/5d531ce929b8f7865e98f3b7_wild-oak-thumb_402x.png
-page: /work/wild-oak-brewing
+### ikari fly containers with a line holder — designed, machined, [sold](https://ikari.wtf).
+video: https://youtu.be/ohbYLJU6EQg
 
-### Logo for a Electrical company in Brevard, NC
+### ikari. Fishing gear, made slow.
+image: /assets/img/601bff492e5b5a0874f81373_ikari-thumbnail_401_20.jpg
 
-image: /assets/img/5d51b37b77dd50e5de6c5a94_transylvania-electric-thumb_402x.png
-page: /work/transylvania-electric
+### Truck and camper. Illustration for msoverland.com.
+image: /assets/img/5d51cd99356da6196ca664bb_ms-overland-thumb_402x.png
 
-### "Tinny", was a boat of mine. It was glorious.
+### Logo process for Resident App (SightPlan).
+image: /assets/img/5d5460b02c90f6123323ac3c_resident-process.jpg
 
-image: /assets/img/5dd6c6e18bbffc785bc9bc17_boat-illustration.jpg
-page: /work/boat
+### Branding and marketing for SightPlan, acquired by SmartRent in 2022.
+image: /assets/img/5d546059865d6435cafdcca7_sightplan-process.jpg
 
-### Logo for Cedar Mountain
+### [Downtime](https://www.crescentkayaks.com/downtime-a-story-on-getting-away-and-finding-your-moment/) — a film about getting away. Shot for Crescent Kayaks.
 
-image: /assets/img/5d5461211401319bdfd108bd_cedar-mtn-thumb_402x.png
-page: /work/cedar-mountain
+### Transylvania Electric. Logo for the county’s spark.
+image: /assets/img/5d518abb8e830990137b60b9_transylvania-electric.jpg
 
-### Rebrand vision for Looking Glass Realty.
+### Podcast cover for The Third Wave.
+image: /assets/img/5d51d8056f0ecb18c1c17b87_ttw-podcast-cover-process.jpg
 
-image: /assets/img/5e41b7413fe5f35e164fb081_lgr-thumb.jpg
-page: /work/looking-glass-realty
-
-### Illustration for Santa Cruz Bicycles
-
-image: /assets/img/5e348311d8d0c250780c2bc9_bike-parts_401_20.jpg
-
-### Branding for a manufacturer of composite bike parts.
-
-image: /assets/img/5d51b3864c908f94788bf720_gulo-composites-thumbnail_402x.png
-page: /work/gulo-composites
-
-### Brevard, NC logo variant.
-
+### Brevard, NC. Logo variant for the home town.
 image: /assets/img/5d6e7155fb939709b28d7c8f_brevard-circle-logo.png
 
-### Branding strategy and marketing for SightPlan
+### Smokey, the moving picture.
+video: https://youtu.be/rwog6Tiod7U
 
-image: /assets/img/5d5460792c90f649a023aaa6_sightplan-thumb_402x.png
-page: /work/sightplan
+### Wild Oak Brewing. Logo for a brewery.
+image: /assets/img/5d531cfca6905df6bde94f70_wild-oak-process.jpg
 
-### I believe I can fly.
+### North Quarter Market, Orlando FL. Logo and branding.
+image: /assets/img/5d531ffea6905d2c07e96c1a_north-quarter-process.jpg
 
-image: /assets/img/5d6e5f946ca18151010acce0_ibicf-raster.jpg
+### Cedar Mountain. Logo.
+image: /assets/img/5d54611e6e4961cd7508fdd5_cedar-mtn-process.jpg
 
-### Brand development, logo and website
+### Bike parts. Illustration for Santa Cruz Bicycles.
+image: /assets/img/5e348311d8d0c250780c2bc9_bike-parts_401_20.jpg
 
-image: /assets/img/5d51ccb55a97c51cc2ecee70_dear-guests-thumb_402x.png
-page: /work/dear-guests
+### Gulo Composites. Branding for carbon bike parts.
+image: /assets/img/5d5193c78f63b37f446899d4_gulo-composites-process.jpg
 
-### Illustrations for Third Wave blog article "Microdosing Psilocybin Mushrooms with the Stamets Stack"
+### Pilot Cove: a slice of Pisgah paradise — photography and a few stunts for [Blue Ridge Outdoors](https://www.blueridgeoutdoors.com/go-outside/pilot-cove-a-slice-of-pisgah-paradise/). Also took over their Instagram for a week once.
 
-image: /assets/img/5dd6b9eded185396c69e930b_stoned-ape.png
-page: /work/stoned-ape
+### Rebrand vision for Looking Glass Realty.
+image: /assets/img/5e41b785d0b5a4544a97be14_lgr-process_402x.jpg
 
-### Logo and branding for North Quarter Market in Orlando, FL
+### Dear Guests. Brand, logo and website.
+image: /assets/img/5d51d810d4a6301f0d36afb8_dear-guests-process.jpg
 
-image: /assets/img/5d531ff964234c52e7d41209_north-quarter-thumb_402x.png
-page: /work/north-quarter-market
+### My University Advisor. Logo and design.
+image: /assets/img/5d51d8302ca59a9eb29223ab_my-university-advisor-process.jpg
 
-### Logo for Resident App (SightPlan)
+### Brand study for Florida Hospital Innovation Lab.
+image: /assets/img/5d51d8402d295f7bd78e184f_fhil-process.jpg
 
-image: /assets/img/5d5460af1401319d86d10580_resident-app-thumb_402x.png
-page: /work/resident-app
+### Coming through.
+video: https://youtu.be/2st0i3wOoh4
 
-### Fly containers with a line holder.
+### Coming through, the still version.
+image: /assets/img/5ebd4c99a7ae3cdcef43d265_coming-through-thumbnail.jpg
 
-image: /assets/img/601bff492e5b5a0874f81373_ikari-thumbnail_401_20.jpg
-page: /work/ikari-fly-containers-with-a-line-holder
-
-### Illustration for Basil Lynch's Bruce
-
+### Bruce. Illustration for Basil Lynch.
 image: /assets/img/5d52a47d2d295fe70491b6de_bruce-thumb_402x.png
 
-### Have Ricksaw – Will Travel
+### Commissioned illustration for Tasco MTB.
+image: /assets/img/5d51bd0c7c7c291861f97e6d_tasco-mtb-bear-thumb_402x.png
 
+### Have rickshaw — will travel.
 image: /assets/img/5ebd510a78a21ee1963e4dbe_rickshaw-thumbnail.jpg
-page: /work/have-ricksaw-will-travel
 
+### I believe I can fly.
+image: /assets/img/5d6e5f946ca18151010acce0_ibicf-raster.jpg
 
-## writeups
+### Snowfalia, in motion. US Forest Service.
+video: https://youtu.be/g496jGu6RUQ
 
-### project | MicroComp Nordic AB (Sweden)
+### Snowfalia.
+image: /assets/img/5e348c32d8d0c281800ca158_snowfalia-thumb.jpg
 
-MicroComp Nordic AB is a sales, product development and consultancy firm focused on microwave and fiber optics. We sell all types of microwave and fiber optic components and subsystems. MicroComp Nordic AB specialise in design of RF over fiber, desktop amplifiers, CellScanners, SDR and radar products.
-—
-Site deisgn & development.
+### Yeah buoy.
+image: /assets/img/5e348aa634c4511fff20db3d_yeahbuoy-thumb.jpg
 
-### project | SightPlan
+### A film.
+video: https://youtu.be/XSYQHHY1amc
 
-Powerful mobile-first software solutions that help your on-site teams elevate loyalty and boost returns.
-—
-Branding, marketing site design & development, illustrations, photography, videography, various marketing materials, user experience & interaction design for web/mobile apps.
-
-### project | Caterpillar
-
-35th anniversary of Caterpillar's 3500 generator set that is celebrated by giving a generator away. Mission to make energy access a basic global human right.
-—
-Site design.
-
-### CLIENT | Harbor House
-
-At Harbor House survivors to take control of their lives – rediscovering safety and self-esteem. Offering a 24-hour crisis hotline, shelter, counseling, legal advocacy, and other services to thousands of people. Harbor House is Orange County’s leading authority on domestic violence and seeks to eliminate domestic violence in Central Florida by providing safety, shelter, empowerment, education and justice.
-—
-Site design _&_ front-end development.
-
-### CLIENT | Know Cancer
-
-Cancer Social-Network, Resource-Directory & Education-Hub supporting all those affected by cancer.
-—
-Branding, illustration, site design _&_ front-end development.
-
-### CLIENT | Clinical Trials GPS
-
-Project’s goal is to provide users with the most comprehensive, up to date information about ongoing clinical studies, as well as providing a quick and easy way to participate. View the latest trials in your area, browse through our directory of clinical trial facilities, or read our educational articles to learn more about the various conditions treated by clinical trials.
-—
-Branding, site design _&_ front-end development.
-
-### CLIENT | Bacardi
-
-Bahama's wine & spirits boutique and lounge. A destination for the discerning palate, specializing in unique wines and spirits from around the world. From the robust characteristics of Bordeaux to the racy zest of the Argentine, 1er Cru offers an environment to be submersed in the knowledge, history and ingredients of spirits and wine. J.A.B. is a line of premium handcrafted Rum products by Bacardi.
-—
-Sites design _&_ front-end development.
-
-### CLIENT | Columbia University
-
-Founded in 1947, the Journal of International Affairs is a leading foreign affairs periodical edited by the graduate students at the Columbia University School of International and Public Affairs. The Journal is published bi-annually and has readership in over eighty countries. It has earned worldwide recognition for its unique single-topic format, and for framing heated debates in international affairs since its inception. Contributors are drawn from a diverse group of academics and practitioners.
-—
-Site deisgn _&_ front-end development.
-
-### CLIENT | Windsor
-
-The Windsor offers unique and upscale accommodations in the heart of Downtown Asheville, and is within walking distance of some of the best restaurants, breweries, shops and galleries in the area.
-—
-Site Design.
-
-### CLIENT | 23andMe
-
-23andMe for Educators is a program is designed to modernize genetics education in classrooms around the world. Registering gives educators access to the growing repository of crowd-sourced lessons, a discount on DNA kits, and email updates on new lessons and stories from the education community.
-—
-Site design.
-
-### CLIENT | Downtown Credo
-
-Downtown CREDO mission is to improve the quality of lives in our nations cities by cultivating networks of meaning, impact and community.
-—
-Branding, sites design _&_ development.
-
-### CLIENT | Planet Natural
-
-Environmentally safe gardening products, e-commerce site and knowledge base.
-—
-Site design, illustrations.
-
-### CLIENT | Garnaffaren
-
-Knitting supply store.
-—
-Branding, site design.
-
-## away
-
-Roman is an avid mountain biker, fisherman and great outdoors advocate. He like to get his hands dirty when it comes to repairs, maintenance, experimenting and making things that he uses on daily basis.
-
-Give him a follow on  [youtube](https://www.youtube.com/c/RomanRusinovFilms) _&_ [instagram](https://www.instagram.com/rusinov.ro/).
+### More moving pictures on [YouTube](https://www.youtube.com/c/RomanRusinovFilms).

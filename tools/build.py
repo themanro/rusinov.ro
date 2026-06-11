@@ -76,6 +76,117 @@ def parse_writeups(text):
     return entries
 
 
+# ---------- work example cards ----------
+
+CARD_SIZES = "(max-width: 479px) 92vw, (max-width: 767px) 44vw, (max-width: 991px) 45vw, 28vw"
+# shared Webflow interaction ids — identical across all cards, drive hover animations
+IX_LIGHTBOX = "c1bd08d3-66e5-bb61-06da-da09a92a1c1c"
+IX_TEXT = "c1bd08d3-66e5-bb61-06da-da09a92a1c1e"
+IX_IMG = "c1bd08d3-66e5-bb61-06da-da09a92a1c21"
+IX_MORE = "bbcf335e-1723-b142-da42-929b3baf3f85"
+EMBEDLY_KEY = "96f1f04c5f4143bcb0f2e68c87d65feb"
+
+def imgsize(path):
+    """Width/height of a PNG or JPEG without external deps. None if unknown."""
+    import struct
+    try:
+        with open(path, "rb") as f:
+            head = f.read(2)
+            if head == b"\x89P":  # PNG
+                f.seek(16)
+                w, h = struct.unpack(">II", f.read(8))
+                return w, h
+            if head == b"\xff\xd8":  # JPEG
+                while True:
+                    marker = f.read(2)
+                    if len(marker) < 2 or marker[0] != 0xFF:
+                        return None
+                    if 0xC0 <= marker[1] <= 0xCF and marker[1] not in (0xC4, 0xC8, 0xCC):
+                        f.read(3)
+                        h, w = struct.unpack(">HH", f.read(4))
+                        return w, h
+                    size = struct.unpack(">H", f.read(2))[0]
+                    f.seek(size - 2, 1)
+    except Exception:
+        pass
+    return None
+
+def srcset_for(image):
+    """Build a srcset from Webflow-style responsive variants if they exist."""
+    full = os.path.join(ROOT, image.lstrip("/"))
+    d, fname = os.path.dirname(full), os.path.basename(full)
+    stem = re.sub(r"\.[a-z]+$", "", fname, flags=re.I)
+    entries = []
+    if os.path.isdir(d):
+        for f in os.listdir(d):
+            m = re.match(re.escape(stem) + r"-p-(\d+)\.[a-z]+$", f, re.I)
+            if m:
+                entries.append((int(m.group(1)), f"/assets/img/{f}"))
+    if not entries:
+        return ""
+    size = imgsize(full)
+    if size:
+        entries.append((size[0], image))
+    entries.sort()
+    ss = ", ".join(f"{u} {w}w" for w, u in entries)
+    return f' sizes="{CARD_SIZES}" srcset="{ss}"'
+
+def youtube_id(url):
+    m = re.search(r"(?:youtu\.be/|[?&]v=|/embed/)([\w-]{6,})", url)
+    return m.group(1) if m else None
+
+def video_json(url):
+    import json as _json
+    vid = youtube_id(url)
+    if not vid:
+        raise SystemExit(f"unsupported video url (YouTube only for now): {url}")
+    watch = f"https://www.youtube.com/watch?v={vid}"
+    thumb = f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg"
+    import urllib.parse as up
+    embed_src = ("//cdn.embedly.com/widgets/media.html?src=" +
+                 up.quote(f"https://www.youtube.com/embed/{vid}?feature=oembed", safe="") +
+                 "&url=" + up.quote(watch, safe="") +
+                 "&image=" + up.quote(thumb, safe="") +
+                 f"&key={EMBEDLY_KEY}&type=text%2Fhtml&schema=youtube")
+    html_embed = (f'<iframe class="embedly-embed" src="{embed_src}" width="940" height="528" '
+                  f'scrolling="no" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="true"></iframe>')
+    item = {"url": watch, "originalUrl": watch, "width": 940, "height": 528,
+            "thumbnailUrl": thumb, "html": html_embed, "type": "video"}
+    return _json.dumps({"items": [item], "group": "works"}), thumb
+
+def render_examples(text):
+    import json as _json
+    cards = []
+    for e in parse_writeups(text):  # same ### parser: label=caption line
+        caption = e["label"]
+        fields = dict(re.findall(r"^(\w+):\s*(.+)$", e["body"], re.M))
+        image, video, page = fields.get("image"), fields.get("video"), fields.get("page")
+        if video:
+            jsn, thumb = video_json(video)
+            src, extra = thumb, ""
+        elif image:
+            if not image.startswith("/"):
+                image = "/" + image
+            if not os.path.exists(os.path.join(ROOT, image.lstrip("/"))):
+                print(f"  warning: examples image not found: {image}")
+            jsn = _json.dumps({"items": [{"url": image, "type": "image"}], "group": "works"})
+            src, extra = image, srcset_for(image)
+        else:
+            print(f"  warning: example '{caption[:40]}' has no image/video, skipped")
+            continue
+        more = (f'<a data-w-id="{IX_MORE}" href="{page}" class="collection-link">'
+                f'More about this project ➔</a>') if page else ""
+        textblock = ("" if caption.strip() == "-" else
+                     f'<div data-w-id="{IX_TEXT}" class="textblock"><p class="paragraph">{md_inline(caption)}</p></div>')
+        cards.append(
+            f'<div role="listitem" class="collection-item w-dyn-item"><div class="collection-wrapper">'
+            f'<a href="#" data-w-id="{IX_LIGHTBOX}" class="lightbox-link w-inline-block w-lightbox">'
+            f'{textblock}'
+            f'<img data-w-id="{IX_IMG}" alt="" src="{src}"{extra} class="lightbox-thumbnail"/>'
+            f'<script type="application/json" class="w-json">{jsn}</script></a>{more}</div></div>')
+    return "".join(cards)
+
+
 # ---------- region replacement (balanced-tag aware) ----------
 
 def find_region(src, key):
@@ -122,6 +233,11 @@ def main():
         inner = "".join(f'<li class="list-item">{md_inline(i)}</li>' for i in items)
         src = replace_region(src, "skills", inner)
         print(f"  skills: {len(items)} items")
+
+    if "examples" in sections:
+        inner = render_examples(sections["examples"])
+        src = replace_region(src, "examples", inner)
+        print(f"  examples: {inner.count('collection-item')} cards")
 
     if "writeups" in sections:
         rows = []

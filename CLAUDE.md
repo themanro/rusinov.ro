@@ -12,9 +12,10 @@ Roman Rusinov's personal site: a self-hosted replica of his original Webflow sit
 - Original full-res source images also live outside the repo in `~/rusinov-archive/work/`
 
 ## Content editing — IMPORTANT
-Six homepage regions are markdown-driven: hero, about, overview, skills, writeups,
-away (marked `data-edit="<key>"` in index.html). Their content lives in
-`content/site.md`. **Edit those regions ONLY via content/site.md**, then run
+Seven homepage regions are markdown-driven: hero, about, overview, skills, examples
+(the thumbnail cards — images via `image:`, YouTube via `video:`, optional `page:`
+link; user uploads go in `/uploads`), writeups, away (marked `data-edit="<key>"`
+in index.html). Their content lives in `content/site.md`. **Edit those regions ONLY via content/site.md**, then run
 `python3 tools/build.py` (or just push — the GitHub Action rebuilds automatically).
 Direct HTML edits inside those regions get overwritten on the next build.
 Everything else (cards, nav, footer, work pages) is still edited directly in HTML.

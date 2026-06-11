@@ -11,6 +11,13 @@
     plain line break      small break (same paragraph)
   Section names (## hero, ## about, ...) must not change.
   In ## writeups, each entry is:  ### LABEL | Name | optional tag (new/RETIRED)
+
+  In ## examples (the thumbnail cards), each entry is:
+    ### Caption shown on hover     (use "### -" for no caption)
+    image: /uploads/my-image.jpg   (or video: https://youtu.be/XXXX)
+    page: /work/some-page          (optional "More about this project" link)
+  New images: upload to the /uploads folder on GitHub (Add file > Upload files),
+  then reference them here. Keep images around 800-1200px wide.
 -->
 
 ## hero
@@ -52,6 +59,137 @@ He also does commercial illustration, print, video & photo production. He writes
 - Great knowledge of color usage, typography, brand guidelines and equity.
 - Experience with designing interactive voice respose systems.
 - Knowledge of agile methodology and product development.
+
+## examples
+
+### Illustration for msoverland.com
+
+image: /assets/img/5d51cd99356da6196ca664bb_ms-overland-thumb_402x.png
+
+### Illustration
+
+image: /assets/img/5e348aa634c4511fff20db3d_yeahbuoy-thumb.jpg
+page: /work/yeah-buoy
+
+### Coming through illustration.
+
+image: /assets/img/5ebd4c99a7ae3cdcef43d265_coming-through-thumbnail.jpg
+page: /work/coming-through
+
+### Commissioned illustration for Tasco MTB
+
+image: /assets/img/5d51bd0c7c7c291861f97e6d_tasco-mtb-bear-thumb_402x.png
+
+### Podcast cover design for The Third Wave
+
+image: /assets/img/5d51cf65f82313c2cb516651_ttw-podcast-cover-thumb_402x.png
+page: /work/the-third-wave-podcast
+
+### Illustration for US Forest Service
+
+image: /assets/img/5e3486cdd8d0c262a40c54fa_Smokey_Animation_web.gif
+page: /work/smokey
+
+### Logo and design for My University Advisor
+
+image: /assets/img/5d51b3cb77dd50188e6c5c27_my-university-advisor-thumbnail_402x.png
+page: /work/test-2
+
+### Illustration for US Forest Service
+
+image: /assets/img/5e348c32d8d0c281800ca158_snowfalia-thumb.jpg
+page: /work/snowfalia
+
+### Brand study for Florida Hospital Innovation Lab
+
+image: /assets/img/5d51b3918483ed6fc0389479_fhil-thumbnail_402x.png
+page: /work/test-1
+
+### -
+
+image: /assets/img/5d51d0ec28fbf0478969efab_mulberry-gap-thumb_402x.png
+
+### Logo for brewery
+
+image: /assets/img/5d531ce929b8f7865e98f3b7_wild-oak-thumb_402x.png
+page: /work/wild-oak-brewing
+
+### Logo for a Electrical company in Brevard, NC
+
+image: /assets/img/5d51b37b77dd50e5de6c5a94_transylvania-electric-thumb_402x.png
+page: /work/transylvania-electric
+
+### "Tinny", was a boat of mine. It was glorious.
+
+image: /assets/img/5dd6c6e18bbffc785bc9bc17_boat-illustration.jpg
+page: /work/boat
+
+### Logo for Cedar Mountain
+
+image: /assets/img/5d5461211401319bdfd108bd_cedar-mtn-thumb_402x.png
+page: /work/cedar-mountain
+
+### Rebrand vision for Looking Glass Realty.
+
+image: /assets/img/5e41b7413fe5f35e164fb081_lgr-thumb.jpg
+page: /work/looking-glass-realty
+
+### Illustration for Santa Cruz Bicycles
+
+image: /assets/img/5e348311d8d0c250780c2bc9_bike-parts_401_20.jpg
+
+### Branding for a manufacturer of composite bike parts.
+
+image: /assets/img/5d51b3864c908f94788bf720_gulo-composites-thumbnail_402x.png
+page: /work/gulo-composites
+
+### Brevard, NC logo variant.
+
+image: /assets/img/5d6e7155fb939709b28d7c8f_brevard-circle-logo.png
+
+### Branding strategy and marketing for SightPlan
+
+image: /assets/img/5d5460792c90f649a023aaa6_sightplan-thumb_402x.png
+page: /work/sightplan
+
+### I believe I can fly.
+
+image: /assets/img/5d6e5f946ca18151010acce0_ibicf-raster.jpg
+
+### Brand development, logo and website
+
+image: /assets/img/5d51ccb55a97c51cc2ecee70_dear-guests-thumb_402x.png
+page: /work/dear-guests
+
+### Illustrations for Third Wave blog article "Microdosing Psilocybin Mushrooms with the Stamets Stack"
+
+image: /assets/img/5dd6b9eded185396c69e930b_stoned-ape.png
+page: /work/stoned-ape
+
+### Logo and branding for North Quarter Market in Orlando, FL
+
+image: /assets/img/5d531ff964234c52e7d41209_north-quarter-thumb_402x.png
+page: /work/north-quarter-market
+
+### Logo for Resident App (SightPlan)
+
+image: /assets/img/5d5460af1401319d86d10580_resident-app-thumb_402x.png
+page: /work/resident-app
+
+### Fly containers with a line holder.
+
+image: /assets/img/601bff492e5b5a0874f81373_ikari-thumbnail_401_20.jpg
+page: /work/ikari-fly-containers-with-a-line-holder
+
+### Illustration for Basil Lynch's Bruce
+
+image: /assets/img/5d52a47d2d295fe70491b6de_bruce-thumb_402x.png
+
+### Have Ricksaw – Will Travel
+
+image: /assets/img/5ebd510a78a21ee1963e4dbe_rickshaw-thumbnail.jpg
+page: /work/have-ricksaw-will-travel
+
 
 ## writeups
 

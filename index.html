@@ -42,6 +42,15 @@
   .pile img { width: 100%; height: auto; display: block; }
   .cap { color: var(--dim); font-size: 0.92em; margin-top: .6rem; }
   .say { font-size: 1em; }
+  .pinned::before {
+    content: "pinned";
+    display: block;
+    color: var(--dim);
+    font-size: .8em;
+    letter-spacing: .12em;
+    margin-bottom: .45rem;
+  }
+  .circa { color: var(--dim); }
   .vid iframe { width: 100%; aspect-ratio: 16/9; border: 0; display: block; }
   footer { color: var(--dim); font-size: .92em; margin-top: 5rem; }
 </style>
@@ -64,178 +73,210 @@
 
 <div class="pile">
 
-  <div>
-    <img src="/assets/img/5dd6c6e18bbffc785bc9bc17_boat-illustration.jpg" alt="" loading="lazy">
-    <p class="cap">“Tinny” was a boat of mine. It was glorious.</p>
-  </div>
-
-  <div>
+  <div class="entry pinned">
     <img src="/uploads/rud-cover.jpg" alt="" loading="lazy">
     <p class="cap"><a href="https://farlowmusic.bandcamp.com/album/rud" target="_blank">RUD</a> — an album. Written, recorded and released as F ∆ R L Ø W.</p>
   </div>
 
-  <div>
+  <div class="entry">
+    <img src="/assets/img/5dd6c6e18bbffc785bc9bc17_boat-illustration.jpg" alt="" loading="lazy">
+    <p class="cap">“Tinny” was a boat of mine. It was glorious.</p>
+  </div>
+
+  <div class="entry">
     <img src="/assets/img/5e3486cdd8d0c262a40c54fa_Smokey_Animation_web.gif" alt="" loading="lazy">
     <p class="cap">Smokey, animated. US Forest Service.</p>
   </div>
 
   <p class="say">Designed and built a house. Slept in it the same decade.</p>
 
-  <div>
+  <div class="entry">
     <img src="/assets/img/5d51d0ec28fbf0478969efab_mulberry-gap-thumb_402x.png" alt="" loading="lazy">
     <p class="cap">Hand-drawn trail map for Mulberry Gap. Ellijay, GA.</p>
   </div>
 
-  <div>
+  <div class="entry">
     <img src="/assets/img/5dd6b9eded185396c69e930b_stoned-ape.png" alt="" loading="lazy">
     <p class="cap">Stoned ape. Illustration for The Third Wave.</p>
   </div>
 
-  <div>
+  <div class="entry">
     <div class="vid"><iframe src="https://www.youtube.com/embed/ohbYLJU6EQg" loading="lazy" allowfullscreen title=""></iframe></div>
     <p class="cap">ikari fly containers with a line holder — designed, machined, <a href="https://ikari.wtf" target="_blank">sold</a>.</p>
   </div>
 
-  <div>
+  <div class="entry">
     <img src="/assets/img/601bff492e5b5a0874f81373_ikari-thumbnail_401_20.jpg" alt="" loading="lazy">
     <p class="cap">ikari. Fishing gear, made slow.</p>
   </div>
 
-  <div>
+  <div class="entry">
     <img src="/assets/img/5d51cd99356da6196ca664bb_ms-overland-thumb_402x.png" alt="" loading="lazy">
     <p class="cap">Truck and camper. Illustration for msoverland.com.</p>
   </div>
 
-  <div>
+  <div class="entry">
     <img src="/assets/img/5d5460b02c90f6123323ac3c_resident-process.jpg" alt="" loading="lazy">
     <p class="cap">Logo process for Resident App (SightPlan).</p>
   </div>
 
-  <div>
+  <div class="entry">
     <img src="/assets/img/5d546059865d6435cafdcca7_sightplan-process.jpg" alt="" loading="lazy">
     <p class="cap">Branding and marketing for SightPlan, acquired by SmartRent in 2022.</p>
   </div>
 
   <p class="say"><a href="https://www.crescentkayaks.com/downtime-a-story-on-getting-away-and-finding-your-moment/" target="_blank">Downtime</a> — a film about getting away. Shot for Crescent Kayaks.</p>
 
-  <div>
+  <div class="entry">
     <img src="/assets/img/5d518abb8e830990137b60b9_transylvania-electric.jpg" alt="" loading="lazy">
     <p class="cap">Transylvania Electric. Logo for the county’s spark.</p>
   </div>
 
-  <div>
+  <div class="entry">
     <img src="/assets/img/5d51d8056f0ecb18c1c17b87_ttw-podcast-cover-process.jpg" alt="" loading="lazy">
     <p class="cap">Podcast cover for The Third Wave.</p>
   </div>
 
-  <div>
+  <div class="entry">
     <img src="/assets/img/5d6e7155fb939709b28d7c8f_brevard-circle-logo.png" alt="" loading="lazy">
     <p class="cap">Brevard, NC. Logo variant for the home town.</p>
   </div>
 
-  <div>
+  <div class="entry">
     <div class="vid"><iframe src="https://www.youtube.com/embed/rwog6Tiod7U" loading="lazy" allowfullscreen title=""></iframe></div>
     <p class="cap">Smokey, the moving picture.</p>
   </div>
 
-  <div>
+  <div class="entry">
     <img src="/assets/img/5d531cfca6905df6bde94f70_wild-oak-process.jpg" alt="" loading="lazy">
     <p class="cap">Wild Oak Brewing. Logo for a brewery.</p>
   </div>
 
-  <div>
+  <div class="entry">
     <img src="/assets/img/5d531ffea6905d2c07e96c1a_north-quarter-process.jpg" alt="" loading="lazy">
     <p class="cap">North Quarter Market, Orlando FL. Logo and branding.</p>
   </div>
 
-  <div>
+  <div class="entry">
     <img src="/assets/img/5d54611e6e4961cd7508fdd5_cedar-mtn-process.jpg" alt="" loading="lazy">
     <p class="cap">Cedar Mountain. Logo.</p>
   </div>
 
-  <div>
+  <div class="entry">
     <img src="/assets/img/5e348311d8d0c250780c2bc9_bike-parts_401_20.jpg" alt="" loading="lazy">
     <p class="cap">Bike parts. Illustration for Santa Cruz Bicycles.</p>
   </div>
 
-  <div>
+  <div class="entry">
     <img src="/assets/img/5d5193c78f63b37f446899d4_gulo-composites-process.jpg" alt="" loading="lazy">
     <p class="cap">Gulo Composites. Branding for carbon bike parts.</p>
   </div>
 
   <p class="say">Pilot Cove: a slice of Pisgah paradise — photography and a few stunts for <a href="https://www.blueridgeoutdoors.com/go-outside/pilot-cove-a-slice-of-pisgah-paradise/" target="_blank">Blue Ridge Outdoors</a>. Also took over their Instagram for a week once.</p>
 
-  <div>
+  <div class="entry">
     <img src="/assets/img/5e41b785d0b5a4544a97be14_lgr-process_402x.jpg" alt="" loading="lazy">
     <p class="cap">Rebrand vision for Looking Glass Realty.</p>
   </div>
 
-  <div>
+  <div class="entry">
     <img src="/assets/img/5d51d810d4a6301f0d36afb8_dear-guests-process.jpg" alt="" loading="lazy">
     <p class="cap">Dear Guests. Brand, logo and website.</p>
   </div>
 
-  <div>
+  <div class="entry">
     <img src="/assets/img/5d51d8302ca59a9eb29223ab_my-university-advisor-process.jpg" alt="" loading="lazy">
     <p class="cap">My University Advisor. Logo and design.</p>
   </div>
 
-  <div>
+  <div class="entry">
     <img src="/assets/img/5d51d8402d295f7bd78e184f_fhil-process.jpg" alt="" loading="lazy">
     <p class="cap">Brand study for Florida Hospital Innovation Lab.</p>
   </div>
 
-  <div>
+  <div class="entry">
     <div class="vid"><iframe src="https://www.youtube.com/embed/2st0i3wOoh4" loading="lazy" allowfullscreen title=""></iframe></div>
     <p class="cap">Coming through.</p>
   </div>
 
-  <div>
+  <div class="entry">
     <img src="/assets/img/5ebd4c99a7ae3cdcef43d265_coming-through-thumbnail.jpg" alt="" loading="lazy">
     <p class="cap">Coming through, the still version.</p>
   </div>
 
-  <div>
+  <div class="entry">
     <img src="/assets/img/5d52a47d2d295fe70491b6de_bruce-thumb_402x.png" alt="" loading="lazy">
     <p class="cap">Bruce. Illustration for Basil Lynch.</p>
   </div>
 
-  <div>
+  <div class="entry">
     <img src="/assets/img/5d51bd0c7c7c291861f97e6d_tasco-mtb-bear-thumb_402x.png" alt="" loading="lazy">
     <p class="cap">Commissioned illustration for Tasco MTB.</p>
   </div>
 
-  <div>
+  <div class="entry">
     <img src="/assets/img/5ebd510a78a21ee1963e4dbe_rickshaw-thumbnail.jpg" alt="" loading="lazy">
     <p class="cap">Have rickshaw — will travel.</p>
   </div>
 
-  <div>
+  <div class="entry">
     <img src="/assets/img/5d6e5f946ca18151010acce0_ibicf-raster.jpg" alt="" loading="lazy">
     <p class="cap">I believe I can fly.</p>
   </div>
 
-  <div>
+  <div class="entry">
     <div class="vid"><iframe src="https://www.youtube.com/embed/g496jGu6RUQ" loading="lazy" allowfullscreen title=""></iframe></div>
     <p class="cap">Snowfalia, in motion. US Forest Service.</p>
   </div>
 
-  <div>
+  <div class="entry">
     <img src="/assets/img/5e348c32d8d0c281800ca158_snowfalia-thumb.jpg" alt="" loading="lazy">
     <p class="cap">Snowfalia.</p>
   </div>
 
-  <div>
+  <div class="entry">
     <img src="/assets/img/5e348aa634c4511fff20db3d_yeahbuoy-thumb.jpg" alt="" loading="lazy">
     <p class="cap">Yeah buoy.</p>
   </div>
 
-  <div>
+  <div class="entry">
     <div class="vid"><iframe src="https://www.youtube.com/embed/XSYQHHY1amc" loading="lazy" allowfullscreen title=""></iframe></div>
     <p class="cap">A film.</p>
   </div>
 
   <p class="say">More moving pictures on <a href="https://www.youtube.com/c/RomanRusinovFilms" target="_blank">YouTube</a>.</p>
+
+  <div class="entry">
+    <img src="/uploads/site-2015.jpg" alt="" loading="lazy">
+    <p class="cap">For a while, this site was just my name upside down and seven links. <span class="circa">(circa 2015)</span></p>
+  </div>
+
+  <div class="entry">
+    <img src="/uploads/1000buddhas-2013.jpg" alt="" loading="lazy">
+    <p class="cap">1000 Buddhas — a design collective I ran with friends. <span class="circa">(circa 2012)</span></p>
+  </div>
+
+  <p class="say">The infographics years: the cost of diabetes, U.S. foreign aid, an analysis of clinical trials. <span class="circa">(circa 2012)</span></p>
+
+  <div class="entry">
+    <img src="/uploads/site-2009.jpg" alt="" loading="lazy">
+    <p class="cap">Dejavu Design, Inc. — my first company. The site had sections for wakeskating, skateboarding and modeling. <span class="circa">(circa 2009)</span></p>
+  </div>
+
+  <div class="entry">
+    <img src="/uploads/goatmag-2009.jpg" alt="" loading="lazy">
+    <p class="cap">G.O.A.T. — a startup hip-hop magazine. Design, illustration, photography. <span class="circa">(circa 2009)</span></p>
+  </div>
+
+  <div class="entry">
+    <img src="/uploads/photo-portfolio-2008-cover.jpg" alt="" loading="lazy">
+    <p class="cap">Photography portfolio, age 23 — recovered from the Internet Archive. <a href="/uploads/photo-portfolio-2008.pdf">The PDF still works.</a> <span class="circa">(circa 2008)</span></p>
+  </div>
+
+  <div class="entry">
+    <img src="/uploads/site-2008.jpg" alt="" loading="lazy">
+    <p class="cap">My first website. Times New Roman, default blues, and a LiveJournal for a blog. <span class="circa">(circa 2007)</span></p>
+  </div>
 
 </div>
 

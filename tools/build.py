@@ -66,7 +66,7 @@ def parse_entries(text):
                 entries.append(cur)
             cur = {"caption": m.group(1).strip(), "fields": {}}
         elif cur is not None:
-            f = re.match(r"^(image|video):\s*(\S+)\s*$", line)
+            f = re.match(r"^(image|video|pinned|circa):\s*(\S+)\s*$", line)
             if f:
                 cur["fields"][f.group(1)] = f.group(2)
     if cur:
@@ -80,17 +80,33 @@ def youtube_id(url):
     m = re.search(r"(?:youtu\.be/|[?&]v=|/embed/)([\w-]{6,})", url)
     return m.group(1) if m else None
 
+MAX_PINNED = 3
+
 def render_pile(text):
+    import datetime
+    this_year = datetime.date.today().year
+    entries = parse_entries(text)
+    pinned = [e for e in entries if e["fields"].get("pinned", "").lower() in ("yes", "true", "1")]
+    if len(pinned) > MAX_PINNED:
+        print(f"  warning: {len(pinned)} pinned entries, only the first {MAX_PINNED} stay pinned")
+        for e in pinned[MAX_PINNED:]:
+            e["fields"].pop("pinned")
+        pinned = pinned[:MAX_PINNED]
+    rest = [e for e in entries if e not in pinned]
     blocks = []
-    for e in parse_entries(text):
+    for e in pinned + rest:
         cap = md_inline(e["caption"])
+        circa = e["fields"].get("circa")
+        if circa and circa.isdigit() and this_year - int(circa) >= 10:
+            cap += f' <span class="circa">(circa {circa})</span>'
+        pin_cls = " pinned" if e in pinned else ""
         image, video = e["fields"].get("image"), e["fields"].get("video")
         if video:
             vid = youtube_id(video)
             if not vid:
                 raise SystemExit(f"unsupported video url (YouTube only for now): {video}")
             blocks.append(
-                f'  <div>\n    <div class="vid"><iframe src="https://www.youtube.com/embed/{vid}" '
+                f'  <div class="entry{pin_cls}">\n    <div class="vid"><iframe src="https://www.youtube.com/embed/{vid}" '
                 f'loading="lazy" allowfullscreen title=""></iframe></div>\n'
                 f'    <p class="cap">{cap}</p>\n  </div>')
         elif image:
@@ -99,10 +115,10 @@ def render_pile(text):
             if not os.path.exists(os.path.join(ROOT, image.lstrip("/"))):
                 print(f"  warning: image not found: {image}")
             blocks.append(
-                f'  <div>\n    <img src="{image}" alt="" loading="lazy">\n'
+                f'  <div class="entry{pin_cls}">\n    <img src="{image}" alt="" loading="lazy">\n'
                 f'    <p class="cap">{cap}</p>\n  </div>')
         else:
-            blocks.append(f'  <p class="say">{cap}</p>')
+            blocks.append(f'  <p class="say{pin_cls}">{cap}</p>')
     return "\n\n".join(blocks), len(blocks)
 
 

@@ -1,47 +1,29 @@
-# rusinov.ro — personal site
+# rusinov.ro — personal site ("the pile")
 
-Roman Rusinov's personal site: a self-hosted replica of his original Webflow site
-(mirrored from rusinov.webflow.io in June 2026), served by GitHub Pages.
+Single-page personal site for Roman Rusinov, served by GitHub Pages at
+https://rusinov.ro. One column, system mono, an undated pile of made things.
 
-## Structure
-- `index.html` — homepage
-- `work/<slug>/index.html` — 27 project pages
-- `assets/css/` — single Webflow-generated stylesheet (badge-hiding rule appended at the end)
-- `assets/js/` — self-hosted Webflow animation engine (`webflow.schunk.*.js`) + countUp.js
-- `assets/img/`, `assets/fonts/` — all media, fully local
-- Original full-res source images also live outside the repo in `~/rusinov-archive/work/`
+## How it works
+- **`content/site.md` is the entire site content** — sections `## hero`, `## now`,
+  `## pile`. Pile entries: `### caption` + optional `image:` or `video:` (YouTube) line;
+  no media line = plain text entry.
+- `tools/build.py` renders site.md into `tools/template.html` → `index.html`.
+  Stdlib only. Run `python3 tools/build.py` after editing, or just push —
+  the GitHub Action (`.github/workflows/build-deploy.yml`) rebuilds and deploys
+  every push to main.
+- **Never hand-edit index.html** — it's generated, the next build overwrites it.
+- Layout/CSS/meta/footer/contact links live in `tools/template.html`.
+- Email is obfuscated: `data-mail` anchor + footer script. Never put the plain
+  address in markup or markdown.
 
-## Content editing — IMPORTANT
-Seven homepage regions are markdown-driven: hero, about, overview, skills, examples
-(the thumbnail cards — images via `image:`, YouTube via `video:`, optional `page:`
-link; user uploads go in `/uploads`), writeups, away (marked `data-edit="<key>"`
-in index.html). Their content lives in `content/site.md`. **Edit those regions ONLY via content/site.md**, then run
-`python3 tools/build.py` (or just push — the GitHub Action rebuilds automatically).
-Direct HTML edits inside those regions get overwritten on the next build.
-Everything else (cards, nav, footer, work pages) is still edited directly in HTML.
+## Content conventions
+- The pile is undated and order-curated, not chronological. New things usually
+  go near the top. Keep captions one line, lowercase-ish, dry.
+- Images: `/uploads/` for new ones (Roman drag-drops on GitHub web), legacy art
+  lives in `/assets/img/`. Compress to ~800–1600px wide, ~80% JPEG (`sips`).
+- Roman self-edits site.md via GitHub web; expect bot commits
+  ("Rebuild site from content/site.md") — always `git pull --rebase` before pushing.
 
-Deploys go through GitHub Actions (`.github/workflows/build-deploy.yml`):
-every push to main rebuilds from site.md and deploys via Pages artifact.
-
-## Rules
-- This is generated Webflow markup — edit content (text, links, images) in place, but
-  don't restructure the class soup or touch `data-w-id` attributes (they drive animations).
-- Email is obfuscated: anchors use `href="#" data-mail` and a footer script assembles
-  the real mailto client-side. Never put `hello@` + domain as plain text in markup.
-- Typekit was stripped; fonts currently fall back to system stacks. If adding Google Fonts,
-  add the `<link>` to all 28 pages (`grep -rl '</head>' --include=index.html`).
-- Dead externals (Cushion availability widget, old Google Analytics) were removed — don't re-add.
-- The `.w-webflow-badge` CSS rule at the end of the stylesheet hides the staging badge; keep it.
-
-## Deploying
-Pages serves the `main` branch root; custom domain rusinov.ro (CNAME file), HTTPS enforced.
-
-```
-git add -A && git commit -m "<message>" && git push
-```
-
-Live within a minute or two of pushing.
-
-## Bulk edits
-For changes across all 28 pages (nav, footer, head tags), script it:
-`find . -name index.html` + python/sed, then spot-check in the `rusinov-site` preview server.
+## History
+The previous Webflow-replica site (28 pages) was retired June 2026 — it lives in
+git history before commit 0f3451b. Original full-res assets: `~/rusinov-archive/`.

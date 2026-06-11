@@ -61,13 +61,7 @@ MicroComp Nordic AB is a sales, product development and consultancy firm focused
 —
 Site deisgn & development.
 
-### project | Carrick Properties & Looking Glass Realty
-
-Lingerlong. Vacation rentals in Brevard, NC.
-—
-Site deisgn & development, photography & videography, illustrations.
-
-### project | SightPlan | new
+### project | SightPlan
 
 Powerful mobile-first software solutions that help your on-site teams elevate loyalty and boost returns.
 —
@@ -103,7 +97,7 @@ Bahama's wine & spirits boutique and lounge. A destination for the discerning pa
 —
 Sites design _&_ front-end development.
 
-### CLIENT | Columbia University | RETIRED
+### CLIENT | Columbia University
 
 Founded in 1947, the Journal of International Affairs is a leading foreign affairs periodical edited by the graduate students at the Columbia University School of International and Public Affairs. The Journal is published bi-annually and has readership in over eighty countries. It has earned worldwide recognition for its unique single-topic format, and for framing heated debates in international affairs since its inception. Contributors are drawn from a diverse group of academics and practitioners.
 —
@@ -127,7 +121,7 @@ Downtown CREDO mission is to improve the quality of lives in our nations cities 
 —
 Branding, sites design _&_ development.
 
-### CLIENT | Planet Natural | RETIRED
+### CLIENT | Planet Natural
 
 Environmentally safe gardening products, e-commerce site and knowledge base.
 —

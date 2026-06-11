@@ -142,29 +142,7 @@ video: https://youtu.be/XSYQHHY1amc
 
 ### More moving pictures on [YouTube](https://www.youtube.com/c/RomanRusinovFilms).
 
-### For a while, this site was just my name upside down and seven links.
-image: /uploads/site-2015.jpg
-circa: 2015
-
-### 1000 Buddhas — a design collective I ran with friends.
-image: /uploads/1000buddhas-2013.jpg
-circa: 2012
-
-### The infographics years: the cost of diabetes, U.S. foreign aid, an analysis of clinical trials.
-circa: 2012
-
-### Dejavu Design, Inc. — my first company. The site had sections for wakeskating, skateboarding and modeling.
-image: /uploads/site-2009.jpg
-circa: 2009
-
-### G.O.A.T. — a startup hip-hop magazine. Design, illustration, photography.
-image: /uploads/goatmag-2009.jpg
-circa: 2009
-
 ### Photography portfolio, age 23 — recovered from the Internet Archive. [The PDF still works.](/uploads/photo-portfolio-2008.pdf)
 image: /uploads/photo-portfolio-2008-cover.jpg
 circa: 2008
 
-### My first website. Times New Roman, default blues, and a LiveJournal for a blog.
-image: /uploads/site-2008.jpg
-circa: 2007

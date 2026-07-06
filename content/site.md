@@ -18,8 +18,10 @@
     circa: 2008          year tag; shows "(circa 2008)" once it's 10+ years old
   New entries go wherever you drop them - top, middle, bottom. No dates.
 
-  New images: upload to the /uploads folder on GitHub (Add file > Upload files),
-  keep them roughly 800-1600px wide, then reference as image: /uploads/<name>.
+  New images: upload to the /uploads folder on GitHub (Add file > Upload files) -
+  any size, straight from your phone is fine (HEIC included). The build resizes,
+  strips metadata/GPS and converts automatically; HEIC becomes .jpg, so reference
+  it as image: /uploads/<name>.jpg
 
   Section names (## hero, ## now, ## pile) must not change.
 -->

@@ -25,8 +25,13 @@ https://rusinov.ro. One column, system mono, an undated pile of made things.
 ## Content conventions
 - The pile is undated and order-curated, not chronological. New things usually
   go near the top. Keep captions one line, lowercase-ish, dry.
-- Images: `/uploads/` for new ones (Roman drag-drops on GitHub web), legacy art
-  lives in `/assets/img/`. Compress to ~800–1600px wide, ~80% JPEG (`sips`).
+- Images: `/uploads/` for new ones (Roman drag-drops on GitHub web — any size/HEIC;
+  `tools/process_uploads.py` runs in CI: resize to 1600px, HEIC→JPEG, EXIF/GPS
+  stripped). Legacy art lives in `/assets/img/`. Note: originals persist in git
+  history — truly sensitive photos should be stripped before upload.
+- Build is content-fault-tolerant: bad entries render as text + warning, never a dead
+  deploy. CI opens a GitHub issue if a build fails outright. 404.html is the branded
+  not-found page.
 - Roman self-edits site.md via GitHub web; expect bot commits
   ("Rebuild site from content/site.md") — always `git pull --rebase` before pushing.
 

@@ -9,6 +9,7 @@ permissions:
   contents: write
   pages: write
   id-token: write
+  issues: write
 
 concurrency:
   group: pages
@@ -23,10 +24,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install image tooling
+        run: pip install --quiet pillow pillow-heif
+
+      - name: Normalize images in /uploads (resize, HEIC->JPEG, strip metadata)
+        run: python3 tools/process_uploads.py
+
       - name: Rebuild HTML from content/site.md
         run: python3 tools/build.py
 
-      - name: Commit rebuilt HTML back to the repo
+      - name: Commit processed uploads + rebuilt HTML back to the repo
         run: |
           if ! git diff --quiet; then
             git config user.name "site-builder[bot]"
@@ -44,3 +51,15 @@ jobs:
 
       - id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Open an issue if the build failed
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          existing=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --search "Site build failed in:title" --json number --jq length)
+          if [ "$existing" = "0" ]; then
+            gh issue create --repo "$GITHUB_REPOSITORY" \
+              --title "Site build failed" \
+              --body "The last push did not deploy. Check the run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID — most likely a typo in content/site.md. The site keeps serving the previous version until this is fixed."
+          fi

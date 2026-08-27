@@ -51,6 +51,9 @@ image: /uploads/zdl-effects.jpg
 ### ...and a browser patch editor to build them and load them onto the pedal.
 image: /uploads/zdl-editor.jpg
 
+### ...and a cover editor — draw the little pixel art each effect shows on the pedal’s screen.
+image: /uploads/zdl-cover-editor.jpg
+
 ### This website. Built by hand, edited in a text file, no CMS, no fuss.
 
 ### “Tinny” was a boat of mine. It was glorious.

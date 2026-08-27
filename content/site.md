@@ -45,8 +45,11 @@ image: /uploads/signal-m-2.jpg
 ### [riffraff](https://themanro.github.io/riffraff) — a fast tab writer for weird tunings. Eight-string, five-string bass, strictly no color.
 image: /uploads/riffraff.png
 
-### Microloom — a shimmer reverb I coded for a Zoom MS-70CDR pedal.
-image: /uploads/microloom.png
+### Twenty-one custom effects I coded for a Zoom MS-70CDR — granular, glitch, lo-fi, weirdness. [On GitHub](https://github.com/themanro/ZoomMultistompZDL).
+image: /uploads/zdl-effects.jpg
+
+### ...and a browser patch editor to build them and load them onto the pedal.
+image: /uploads/zdl-editor.jpg
 
 ### This website. Built by hand, edited in a text file, no CMS, no fuss.
 

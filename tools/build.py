@@ -133,8 +133,10 @@ def resolve_image(ref):
     fs = os.path.join(ROOT, ref.lstrip("/"))
     if os.path.exists(fs):
         return ref, fs
+    # self-heal: a ref whose extension changed during upload processing
+    # (heic/png -> jpg) still resolves to the produced file.
     stem, ext = os.path.splitext(ref)
-    if ext.lower() in (".heic", ".heif", ""):
+    if ext.lower() in (".heic", ".heif", ".png", ".webp", ""):
         alt = stem + ".jpg"
         alt_fs = os.path.join(ROOT, alt.lstrip("/"))
         if os.path.exists(alt_fs):

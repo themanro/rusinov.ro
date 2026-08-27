@@ -62,11 +62,13 @@ def main():
         if im.width > MAX_W:
             im = im.resize((MAX_W, round(im.height * MAX_W / im.width)), Image.LANCZOS)
 
-        if ext == ".png" and not has_meta:
-            # keep PNGs as PNG (logos/screenshots); resize was the only need
+        if ext == ".png":
+            # PNGs stay PNG — they're logos/screenshots/pixel-art, often with
+            # transparency. Re-saving without an exif kwarg strips metadata.
             im.save(path, "PNG", optimize=True)
-            print(f"  resized {fname} -> {im.width}px")
+            print(f"  normalized {fname} ({im.width}px PNG, metadata stripped)")
         else:
+            # jpg/webp/heic -> jpg
             out = os.path.join(UPLOADS, stem + ".jpg")
             if im.mode not in ("RGB", "L"):
                 im = im.convert("RGB")

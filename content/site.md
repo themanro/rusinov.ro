@@ -37,14 +37,14 @@ designing risk software at [Eolas](https://eolas.co) · making fishing gear at [
 
 ## pile
 
-### Signal-M — a generative sequencer I’m building for macOS. Amber on black, a rack of slots, a granular sampler, a fretboard you can actually play. Questionable life choices.
+### A generative music workstation for macOS. A shared musical hub — key, mood, chord cycle — keeps a whole rack of instruments (drums, chords, arps, bass, drones, a granular sampler, and infinite-pitch/tempo illusion modules) locked in harmony as they generate evolving patterns, played through the built-in synth or out to your MIDI gear and AU plugins.
 image: /uploads/signal-m-1.jpg
 image: /uploads/signal-m-2.jpg
 
 ### [riffraff](https://themanro.github.io/riffraff) — a fast tab writer for weird tunings. Eight-string, five-string bass, strictly no color.
 image: /uploads/riffraff.png
 
-### Twenty-one custom effects I coded for a Zoom MS-70CDR — granular, glitch, lo-fi, weirdness — with a browser patch editor to load them onto the pedal and a cover editor to draw each one’s little pixel-art screen. [On GitHub](https://github.com/themanro/ZoomMultistompZDL).
+### Twenty-one custom effects for a Zoom MS-70CDR — granular, glitch, lo-fi, weirdness — with a browser patch editor to load them onto the pedal and a cover editor to draw each one’s little pixel-art screen. [On GitHub](https://github.com/themanro/ZoomMultistompZDL).
 image: /uploads/zdl-effects.jpg
 image: /uploads/zdl-editor.jpg
 image: /uploads/zdl-cover-editor.jpg

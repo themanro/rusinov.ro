@@ -77,21 +77,27 @@ def parse_md(path):
 FIELDS = ("image", "video", "pinned", "circa")
 
 def parse_entries(text):
+    # An entry is "### caption" plus optional lines. image:/video: may repeat —
+    # they accumulate in order into one grouped post; pinned:/circa: are scalar.
     entries, cur = [], None
     for line in text.split("\n"):
         m = re.match(r"^###\s+(.*)$", line)
         if m:
             if cur:
                 entries.append(cur)
-            cur = {"caption": m.group(1).strip(), "fields": {}}
+            cur = {"caption": m.group(1).strip(), "media": [], "fields": {}}
             continue
         if cur is None or not line.strip():
             continue
         f = re.match(r"^(\w+):\s*(.+?)\s*$", line)
-        if f and f.group(1) in FIELDS:
-            cur["fields"][f.group(1)] = f.group(2)
-        else:
+        if not f or f.group(1) not in FIELDS:
             warn(f'unrecognized line under "{cur["caption"][:40]}": {line.strip()[:60]!r} (ignored)')
+            continue
+        key, val = f.group(1), f.group(2)
+        if key in ("image", "video"):
+            cur["media"].append((key, val))
+        else:
+            cur["fields"][key] = val
     if cur:
         entries.append(cur)
     return entries
@@ -169,32 +175,37 @@ def render_pile(text):
         if circa and circa.isdigit() and this_year - int(circa) >= 10:
             cap += f' <span class="circa">(circa {circa})</span>'
         pin_cls = " pinned" if e in pinned else ""
-        image, video = e["fields"].get("image"), e["fields"].get("video")
 
-        if video:
-            vid = youtube_id(video)
-            if not vid:
-                warn(f"unrecognized video url (YouTube only): {video} — rendered as text")
-                blocks.append(f'  <p class="say{pin_cls}">{cap}</p>')
-                continue
-            blocks.append(
-                f'  <div class="entry{pin_cls}">\n    <div class="vid"><iframe src="https://www.youtube.com/embed/{vid}" '
-                f'loading="lazy" allowfullscreen title="{alt}"></iframe></div>\n'
-                f'    <p class="cap">{cap}</p>\n  </div>')
-        elif image:
-            web, fs = resolve_image(image)
-            if not web:
-                warn(f"image not found: {image} — entry rendered as text")
-                blocks.append(f'  <p class="say{pin_cls}">{cap}</p>')
-                continue
-            src = urllib.parse.quote(web, safe="/")
-            size = imgsize(fs)
-            dims = f' width="{size[0]}" height="{size[1]}"' if size else ""
-            blocks.append(
-                f'  <div class="entry{pin_cls}">\n    <img src="{src}"{dims} alt="{alt}" loading="lazy" decoding="async">\n'
-                f'    <p class="cap">{cap}</p>\n  </div>')
-        else:
+        # render each media item; skip (with a warning) any that don't resolve
+        media_html = []
+        for kind, val in e["media"]:
+            if kind == "video":
+                vid = youtube_id(val)
+                if not vid:
+                    warn(f"unrecognized video url (YouTube only): {val} — skipped")
+                    continue
+                media_html.append(
+                    f'<div class="vid"><iframe src="https://www.youtube.com/embed/{vid}" '
+                    f'loading="lazy" allowfullscreen title="{alt}"></iframe></div>')
+            else:
+                web, fs = resolve_image(val)
+                if not web:
+                    warn(f"image not found: {val} — skipped")
+                    continue
+                src = urllib.parse.quote(web, safe="/")
+                size = imgsize(fs)
+                dims = f' width="{size[0]}" height="{size[1]}"' if size else ""
+                media_html.append(
+                    f'<img src="{src}"{dims} alt="{alt}" loading="lazy" decoding="async">')
+
+        if not media_html:
             blocks.append(f'  <p class="say{pin_cls}">{cap}</p>')
+            continue
+        gallery = " gallery" if len(media_html) > 1 else ""
+        inner = "\n    ".join(media_html)
+        blocks.append(
+            f'  <div class="entry{pin_cls}{gallery}">\n    {inner}\n'
+            f'    <p class="cap">{cap}</p>\n  </div>')
     return "\n\n".join(blocks), len(blocks)
 
 

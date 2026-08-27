@@ -9,9 +9,10 @@
     blank line             paragraph break (in ## hero)
 
   The pile (## pile): each entry starts with "### caption text", then optionally
-  ONE of these lines:
-    image: /uploads/my-image.jpg     a picture (caption goes under it)
+  one or MORE of these lines (repeat them for a post with several images):
+    image: /uploads/my-image.jpg     a picture
     video: https://youtu.be/XXXXX    an inline YouTube player
+  All images/videos under one ### are ONE post with a single caption beneath them.
   An entry with no image/video is just a line of text in the pile.
   Extra entry options (each on its own line):
     pinned: yes          float this entry to the top (max 3 pinned)
@@ -36,22 +37,16 @@ designing risk software at [Eolas](https://eolas.co) · making fishing gear at [
 
 ## pile
 
-### Signal-M — a generative sequencer I’m building for macOS. Amber on black, a rack of slots, questionable life choices.
+### Signal-M — a generative sequencer I’m building for macOS. Amber on black, a rack of slots, a granular sampler, a fretboard you can actually play. Questionable life choices.
 image: /uploads/signal-m-1.jpg
-
-### Signal-M, deeper in — a granular sampler, a fretboard you can actually play, and a drum grid.
 image: /uploads/signal-m-2.jpg
 
 ### [riffraff](https://themanro.github.io/riffraff) — a fast tab writer for weird tunings. Eight-string, five-string bass, strictly no color.
 image: /uploads/riffraff.png
 
-### Twenty-one custom effects I coded for a Zoom MS-70CDR — granular, glitch, lo-fi, weirdness. [On GitHub](https://github.com/themanro/ZoomMultistompZDL).
+### Twenty-one custom effects I coded for a Zoom MS-70CDR — granular, glitch, lo-fi, weirdness — with a browser patch editor to load them onto the pedal and a cover editor to draw each one’s little pixel-art screen. [On GitHub](https://github.com/themanro/ZoomMultistompZDL).
 image: /uploads/zdl-effects.jpg
-
-### ...and a browser patch editor to build them and load them onto the pedal.
 image: /uploads/zdl-editor.jpg
-
-### ...and a cover editor — draw the little pixel art each effect shows on the pedal’s screen.
 image: /uploads/zdl-cover-editor.jpg
 
 ### This website. Built by hand, edited in a text file, no CMS, no fuss.

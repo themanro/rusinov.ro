@@ -50,6 +50,11 @@
   .pile > * { margin: 0 0 4.5rem; }
   .pile img { width: 100%; height: auto; display: block; }
   .cap { color: var(--dim); font-size: 0.92em; margin-top: .6rem; }
+  /* a grouped post: images/videos stacked, one caption for the set */
+  .gallery img + img,
+  .gallery .vid + img,
+  .gallery img + .vid,
+  .gallery .vid + .vid { margin-top: .5rem; }
   .say { font-size: 1em; }
   .pinned::before {
     content: "pinned";
@@ -87,14 +92,10 @@
     <p class="cap"><a href="https://farlowmusic.bandcamp.com/album/rud" target="_blank">RUD</a> — an album. Written, recorded and released as F ∆ R L Ø W.</p>
   </div>
 
-  <div class="entry">
-    <img src="/uploads/signal-m-1.jpg" width="1600" height="1715" alt="Signal-M — a generative sequencer I’m building for macOS. Amber on black, a rack of slots, questionable life choices." loading="lazy" decoding="async">
-    <p class="cap">Signal-M — a generative sequencer I’m building for macOS. Amber on black, a rack of slots, questionable life choices.</p>
-  </div>
-
-  <div class="entry">
-    <img src="/uploads/signal-m-2.jpg" width="1600" height="1715" alt="Signal-M, deeper in — a granular sampler, a fretboard you can actually play, and a drum grid." loading="lazy" decoding="async">
-    <p class="cap">Signal-M, deeper in — a granular sampler, a fretboard you can actually play, and a drum grid.</p>
+  <div class="entry gallery">
+    <img src="/uploads/signal-m-1.jpg" width="1600" height="1715" alt="Signal-M — a generative sequencer I’m building for macOS. Amber on black, a rack of slots, a granular sampler, a fretboard you can actually play. Questionable life choices." loading="lazy" decoding="async">
+    <img src="/uploads/signal-m-2.jpg" width="1600" height="1715" alt="Signal-M — a generative sequencer I’m building for macOS. Amber on black, a rack of slots, a granular sampler, a fretboard you can actually play. Questionable life choices." loading="lazy" decoding="async">
+    <p class="cap">Signal-M — a generative sequencer I’m building for macOS. Amber on black, a rack of slots, a granular sampler, a fretboard you can actually play. Questionable life choices.</p>
   </div>
 
   <div class="entry">
@@ -102,19 +103,11 @@
     <p class="cap"><a href="https://themanro.github.io/riffraff" target="_blank">riffraff</a> — a fast tab writer for weird tunings. Eight-string, five-string bass, strictly no color.</p>
   </div>
 
-  <div class="entry">
-    <img src="/uploads/zdl-effects.jpg" width="1600" height="900" alt="Twenty-one custom effects I coded for a Zoom MS-70CDR — granular, glitch, lo-fi, weirdness. On GitHub." loading="lazy" decoding="async">
-    <p class="cap">Twenty-one custom effects I coded for a Zoom MS-70CDR — granular, glitch, lo-fi, weirdness. <a href="https://github.com/themanro/ZoomMultistompZDL" target="_blank">On GitHub</a>.</p>
-  </div>
-
-  <div class="entry">
-    <img src="/uploads/zdl-editor.jpg" width="1600" height="900" alt="...and a browser patch editor to build them and load them onto the pedal." loading="lazy" decoding="async">
-    <p class="cap">...and a browser patch editor to build them and load them onto the pedal.</p>
-  </div>
-
-  <div class="entry">
-    <img src="/uploads/zdl-cover-editor.jpg" width="1600" height="900" alt="...and a cover editor — draw the little pixel art each effect shows on the pedal’s screen." loading="lazy" decoding="async">
-    <p class="cap">...and a cover editor — draw the little pixel art each effect shows on the pedal’s screen.</p>
+  <div class="entry gallery">
+    <img src="/uploads/zdl-effects.jpg" width="1600" height="900" alt="Twenty-one custom effects I coded for a Zoom MS-70CDR — granular, glitch, lo-fi, weirdness — with a browser patch editor to load them onto the pedal and a cover editor to draw each one’s little pixel-art screen. On GitHub." loading="lazy" decoding="async">
+    <img src="/uploads/zdl-editor.jpg" width="1600" height="900" alt="Twenty-one custom effects I coded for a Zoom MS-70CDR — granular, glitch, lo-fi, weirdness — with a browser patch editor to load them onto the pedal and a cover editor to draw each one’s little pixel-art screen. On GitHub." loading="lazy" decoding="async">
+    <img src="/uploads/zdl-cover-editor.jpg" width="1600" height="900" alt="Twenty-one custom effects I coded for a Zoom MS-70CDR — granular, glitch, lo-fi, weirdness — with a browser patch editor to load them onto the pedal and a cover editor to draw each one’s little pixel-art screen. On GitHub." loading="lazy" decoding="async">
+    <p class="cap">Twenty-one custom effects I coded for a Zoom MS-70CDR — granular, glitch, lo-fi, weirdness — with a browser patch editor to load them onto the pedal and a cover editor to draw each one’s little pixel-art screen. <a href="https://github.com/themanro/ZoomMultistompZDL" target="_blank">On GitHub</a>.</p>
   </div>
 
   <p class="say">This website. Built by hand, edited in a text file, no CMS, no fuss.</p>

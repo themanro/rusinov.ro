@@ -5,8 +5,9 @@ https://rusinov.ro. One column, system mono, an undated pile of made things.
 
 ## How it works
 - **`content/site.md` is the entire site content** — sections `## hero`, `## now`,
-  `## pile`. Pile entries: `### caption` + optional `image:` or `video:` (YouTube) line;
-  no media line = plain text entry. Extra options per entry: `pinned: yes` (floats to
+  `## pile`. Pile entries: `### caption` + optional `image:`/`video:` (YouTube) lines;
+  REPEAT image:/video: under one caption for a multi-image grouped post (one caption,
+  images stacked); no media line = plain text entry. Extra options per entry: `pinned: yes` (floats to
   top, max 3) and `circa: YYYY` (renders a dim "(circa YYYY)" tag once 10+ years old).
 - `tools/build.py` renders site.md into `tools/template.html` → `index.html`.
   Stdlib only. Run `python3 tools/build.py` after editing, or just push —

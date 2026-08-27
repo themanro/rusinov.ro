@@ -36,8 +36,11 @@ designing risk software at [Eolas](https://eolas.co) · making fishing gear at [
 
 ## pile
 
-### Signal-M — a generative sequencer I’m building for macOS. Soviet control panel, orange needle, questionable life choices.
-image: /uploads/signal-m.png
+### Signal-M — a generative sequencer I’m building for macOS. Amber on black, a rack of slots, questionable life choices.
+image: /uploads/signal-m-1.jpg
+
+### Signal-M, deeper in — a granular sampler, a fretboard you can actually play, and a drum grid.
+image: /uploads/signal-m-2.jpg
 
 ### [riffraff](https://themanro.github.io/riffraff) — a fast tab writer for weird tunings. Eight-string, five-string bass, strictly no color.
 image: /uploads/riffraff.png
